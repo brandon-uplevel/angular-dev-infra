@@ -1,0 +1,16 @@
+{
+  "projects": {},
+  "targets": {
+    "internal-200822": {
+      "hosting": {
+        "code-of-conduct": [
+          "code-of-conduct"
+        ],
+        "dns-redirecting": [
+          "dns-redirecting"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

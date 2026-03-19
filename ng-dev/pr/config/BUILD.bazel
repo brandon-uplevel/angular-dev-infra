@@ -1,0 +1,15 @@
+load("//tools:defaults.bzl", "ts_project")
+
+ts_project(
+    name = "config",
+    srcs = ["index.ts"],
+    visibility = [
+        "//.github/local-actions/branch-manager:__subpackages__",
+        "//github-actions/labeling/pull-request:__subpackages__",
+        "//ng-dev:__subpackages__",
+    ],
+    deps = [
+        "//ng-dev/commit-message",
+        "//ng-dev/utils",
+    ],
+)

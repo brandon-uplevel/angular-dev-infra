@@ -1,0 +1,33 @@
+packages:
+  - .
+  - apps/functions
+  - apps/code-of-conduct
+  - ng-dev/
+  - bazel/
+  - bazel/spec-bundling/test
+  - .github/local-actions
+  - .github/local-actions/branch-manager
+  - .github/local-actions/labels-sync
+  - .github/local-actions/lock-closed
+  - github-actions
+  - github-actions/google-internal-tests
+  - github-actions/unified-status-check
+  - github-actions/previews/pack-and-upload-artifact
+  - github-actions/previews/upload-artifacts-to-firebase
+  - github-actions/post-approval-changes
+  - github-actions/org-file-sync
+  - github-actions/branch-manager
+  - github-actions/saucelabs
+  - github-actions/browserstack
+  - github-actions/labeling
+  - github-actions/bazel/configure-remote
+# The minimum age of a release to be considered for dependency installation.
+# The value is in minutes (1440 minutes = 1 day).
+minimumReleaseAge: 1440
+# List of packages to exclude from the minimum release age check.
+minimumReleaseAgeExclude:
+  - '@angular-devkit/*'
+  - '@angular/*'
+  - '@ngtools/webpack'
+  - '@schematics/*'
+  - 'ng-packagr'

@@ -1,0 +1,51 @@
+{
+  "name": "@angular/build-tooling",
+  "version": "0.0.0-{SCM_HEAD_SHA}",
+  "private": true,
+  "packageManager": "pnpm@10.32.1",
+  "engines": {
+    "npm": "Please use pnpm instead of NPM to install dependencies",
+    "yarn": "Please use pnpm instead of Yarn to install dependencies",
+    "pnpm": "10.32.1"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "ng-dev": "bash ./tools/local-dev.sh",
+    "lint": "tslint -c tslint.json --project tsconfig.json",
+    "build-env-stamp": "tsx --tsconfig tsconfig.json ./ng-dev/release/stamping/_private_main.ts build-env-stamp",
+    "update-generated-files": "pnpm ng-dev misc update-generated-files"
+  },
+  "exports": {
+    "./*": {
+      "default": "./*"
+    }
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "22.0.0-next.3",
+    "@bazel/bazelisk": "1.28.1",
+    "@bazel/buildifier": "8.2.1",
+    "firebase-tools": "15.10.0",
+    "husky": "9.1.7",
+    "jasmine-core": "6.1.0",
+    "jasmine-reporters": "2.5.2",
+    "jasmine": "6.1.0",
+    "prettier": "3.8.1",
+    "tslib": "^2.5.2",
+    "tslint": "6.1.3",
+    "tsx": "^4.15.7",
+    "typescript": "5.9.3"
+  },
+  "pnpm": {
+    "packageExtensions": {
+      "grpc-gcp": {
+        "peerDependencies": {
+          "protobufjs": "*"
+        }
+      }
+    },
+    "onlyBuiltDependencies": [
+      "firebase-functions",
+      "tsx"
+    ]
+  }
+}
